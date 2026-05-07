@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake & Ladder Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Welcome Modal -->
+    <div id="welcomeModal" class="modal active">
+        <div class="modal-content welcome-content">
+            <h1>🎮 Snake & Ladder</h1>
+            <p class="subtitle">A Classic Game with a Modern Twist</p>
+            <form id="nameForm">
+                <input
+                    type="text"
+                    id="playerName"
+                    placeholder="Enter your name"
+                    maxlength="20"
+                    required
+                >
+                <button type="submit" class="btn btn-primary">Start Game</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Game Container -->
+    <div id="gameContainer" class="game-container hidden">
+        <!-- Header -->
+        <div class="header">
+            <div class="game-title">🎮 Snake & Ladder</div>
+            <div class="player-info">
+                <span id="playerDisplay">Player: </span>
+                <span id="positionDisplay">Position: 1</span>
+            </div>
+            <button id="resetBtn" class="btn btn-secondary">New Game</button>
+        </div>
+
+        <!-- Main Game Area -->
+        <div class="game-area">
+            <!-- Game Board -->
+            <div class="board-container">
+                <svg id="snakeLadderSvg" class="snake-ladder-svg"></svg>
+                <div id="gameBoard" class="board"></div>
+            </div>
+
+            <!-- Controls Panel -->
+            <div class="controls-panel">
+                <div class="dice-container">
+                    <div id="diceDisplay" class="dice">🎲</div>
+                    <div id="diceValue" class="dice-value">-</div>
+                </div>
+                <button id="rollBtn" class="btn btn-primary btn-large">Roll Dice</button>
+                <div id="message" class="message"></div>
+            </div>
+        </div>
+
+        <!-- Game Over Modal -->
+        <div id="gameOverModal" class="modal">
+            <div class="modal-content game-over-content">
+                <h2 id="gameOverTitle">🎉 You Won!</h2>
+                <p id="gameOverMessage"></p>
+                <button id="playAgainBtn" class="btn btn-primary">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+    <script src="animations.js"></script>
+</body>
+</html>
